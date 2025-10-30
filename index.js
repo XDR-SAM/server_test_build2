@@ -11,7 +11,7 @@ app.use(express.json());
 
 // const uri = "mongodb+srv://simpleDBUser:<db_password>@cluster0.vyznij5.mongodb.net/?appName=Cluster0";
 
-const uri = 'mongodb://localhost:27017'
+const uri = process.env.MONGODB_URI || 'mongodb://localhost:27017'
 
 const client = new MongoClient(uri, {
     serverApi: {
